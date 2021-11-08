@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+/.idea.2D RPG GAME.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Unity\Upwork\2d-RPG-Game-upwork-\2D RPG GAME\.idea\.idea.2D RPG GAME\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
