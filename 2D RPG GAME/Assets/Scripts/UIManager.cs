@@ -21,13 +21,11 @@ public class UIManager : MonoBehaviour
         if (isActive)
         {
             dialoguePanel.gameObject.SetActive(true);
-            dialoguePanel.DOFade(1f, 1f);
-            dialogueDataHolder.DOMoveY(0f, 1f);
+            dialoguePanel.DOFade(1f, 0.25f);
         }
         else
         {
-            dialogueDataHolder.DOMoveY(-400f, 1f);
-            dialoguePanel.DOFade(0f, 1f).OnComplete(() =>
+            dialoguePanel.DOFade(0f, 0.25f).OnComplete(() =>
             {
                 dialoguePanel.gameObject.SetActive(false);
             });

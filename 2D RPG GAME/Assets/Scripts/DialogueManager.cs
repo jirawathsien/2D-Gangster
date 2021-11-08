@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +13,6 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     
     public TextMeshProUGUI dialogueDescriptionText;
-    public Transform gateObject;
-    public GameObject dialogueNpcController;
     
     private void Awake()
     {
@@ -46,43 +43,29 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            FinishDialogue();
-            return; 
+            FinishDialogue(); 
+            return;
         }
+      
 
         string dialogueText = sentences.Dequeue();
+        StopAllCoroutines();
         StartCoroutine(TypingEffect(dialogueText));
     }
 
     public IEnumerator TypingEffect(string sentence)
     {
-        
         dialogueDescriptionText.text = "";
         foreach (char letter in sentence)
         {
             dialogueDescriptionText.text += letter;
-            yield return new WaitForSeconds(0.02f);
+            yield return null;
         }
     }
     
     void FinishDialogue()
     {
-        if (FindObjectOfType<GroupedDialogue>().CheckIfListIsEmpty())
-        {
-            sentences.Clear();
-            UIManager.instance.SetDialoguePanel();
-            GameManager.instance.pauseGame = false;
-            gateObject.DOMoveX(2f, 2f).OnComplete(() =>
-            {
-                dialogueNpcController.SetActive(false);
-                gateObject.gameObject.SetActive(false);
-            });
-        }
-        else
-        {
-            sentences.Clear();
-            FindObjectOfType<GroupedDialogue>().RemoveIndex();
-            FindObjectOfType<GroupedDialogue>().TriggerNextDialogue();
-        }
+        UIManager.instance.SetDialoguePanel();
+        GameManager.instance.pauseGame = false;
     }
 }
