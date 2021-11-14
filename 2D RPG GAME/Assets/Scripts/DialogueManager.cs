@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     
     public TextMeshProUGUI dialogueDescriptionText;
-    
+   
     private void Awake()
     {
         instance = this;
@@ -46,7 +46,6 @@ public class DialogueManager : MonoBehaviour
             FinishDialogue(); 
             return;
         }
-      
 
         string dialogueText = sentences.Dequeue();
         StopAllCoroutines();
@@ -67,5 +66,7 @@ public class DialogueManager : MonoBehaviour
     {
         UIManager.instance.SetDialoguePanel();
         GameManager.instance.pauseGame = false;
+
+      
     }
 }

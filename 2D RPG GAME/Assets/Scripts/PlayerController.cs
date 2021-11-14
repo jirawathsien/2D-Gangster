@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpd = 40f;
     
     private float horizontal;
+    private float vertical;
     private bool jump;
     
     private Character2D character2D;
@@ -39,19 +40,22 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
+
+      
     }
     
     void FixedUpdate()
     {
         if (GameManager.instance.pauseGame) return;
         
-        character2D.Move(horizontal * Time.fixedDeltaTime, false, jump);
+        character2D.Move(horizontal * Time.fixedDeltaTime, vertical * Time.fixedDeltaTime);
         jump = false;
     }
 
     void HandleInputs()
     {
         horizontal = Input.GetAxisRaw("Horizontal") * moveSpd;
+        vertical = Input.GetAxisRaw("Vertical") * moveSpd;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
