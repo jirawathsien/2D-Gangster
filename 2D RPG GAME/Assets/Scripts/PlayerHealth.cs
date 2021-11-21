@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -22,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0f)
         {
             // dead
-            Debug.Log("Player Dead");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }
@@ -31,7 +32,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyAttack"))
         {
-            Damage(1f);
+            Damage(2f);
+        }
+
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            Damage(2f);
+            Destroy(other.gameObject);
         }
     }
 }

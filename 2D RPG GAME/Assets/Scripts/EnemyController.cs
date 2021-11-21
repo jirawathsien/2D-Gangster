@@ -24,8 +24,16 @@ public class EnemyController : MonoBehaviour
     public CanvasGroup lastDialogueGroup;
     public Image fadeScreen;
     public GameObject tobeCon;
+
+    public GameObject rock;
+    [SerializeField] private float rockThrowTime = 3.5f;
+    private float throwRockTime;
+    
+    [SerializeField] private Transform indicator;
     
     public event Action onDead;
+
+    private Vector2 playerPos;
     
     private void Awake()
     {
@@ -33,8 +41,16 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<PlayerController>().transform;
         rb = GetComponent<Rigidbody2D>();
-
+       
         timeCounter = timeToAttack;
+        throwRockTime = rockThrowTime;
+    }
+
+    private void Start()
+    {
+       
+        playerPos = playerController.position;
+        
     }
 
     private void Update()
@@ -43,24 +59,64 @@ public class EnemyController : MonoBehaviour
         this.spriteRenderer.flipX = playerController.position.x < this.transform.position.x;
         float distance = Vector2.Distance(transform.position, playerController.position);
 
-        if (distance < 10f && distance > 1.95f)
+        if (!isBoss)
         {
-            animator.SetBool("Run", true);
-            transform.position = Vector3.MoveTowards(transform.position, playerController.position, speed * Time.deltaTime);
+            if (distance < 10f && distance > 1.95f)
+            {
+                animator.SetBool("Run", true);
+                transform.position = Vector3.MoveTowards(transform.position, playerController.position, speed * Time.deltaTime);
             
+            }
+            else
+            {
+                animator.SetBool("Run", false);
+
+                if (distance < 2f)
+                {
+                    timeCounter -= Time.deltaTime;
+
+                    if (timeCounter < 0)
+                    {
+                        timeCounter = UnityEngine.Random.Range(2.5f, timeToAttack);
+                        animator.SetTrigger("Attack");
+                    }
+                }
+            }
         }
         else
         {
-            animator.SetBool("Run", false);
-
-            if (distance < 2f)
+            if (distance < 25f && distance > 2f)
             {
-                timeCounter -= Time.deltaTime;
+                animator.SetBool("Run", true);
+                transform.position = Vector3.MoveTowards(transform.position, playerController.position, speed * Time.deltaTime);
 
-                if (timeCounter < 0)
+                throwRockTime -= Time.deltaTime;
+
+                if (throwRockTime < 0f)
                 {
-                    timeCounter = UnityEngine.Random.Range(2.5f, timeToAttack);
-                    animator.SetTrigger("Attack");
+                    throwRockTime = rockThrowTime;
+                    indicator.gameObject.SetActive(true);
+                    indicator.DOMove(playerController.position, 0.5f).OnComplete(() =>
+                    {
+                        indicator.gameObject.SetActive(false);
+                        GameObject rockObject = Instantiate(rock, transform.position, Quaternion.identity);
+                        Destroy(rockObject, 2f);
+                    });
+                } 
+            }
+            else
+            {
+                animator.SetBool("Run", false);
+
+                if (distance < 1.99f)
+                {
+                    timeCounter -= Time.deltaTime;
+
+                    if (timeCounter < 0)
+                    {
+                        timeCounter = UnityEngine.Random.Range(2.5f, timeToAttack);
+                        animator.SetTrigger("Attack");
+                    }
                 }
             }
         }

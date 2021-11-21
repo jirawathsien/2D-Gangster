@@ -12,6 +12,8 @@ TagManager:
   - Sword
   - Barrel
   - EnemyAttack
+  - Rock
+  - Indicator
   layers:
   - Default
   - TransparentFX
