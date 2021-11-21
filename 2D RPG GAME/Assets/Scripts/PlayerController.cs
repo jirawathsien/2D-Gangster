@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private static bool isSandAttack;
 
     public GameObject weaponTypeBox;
-    public bool isSecondWeaponPickedup;
+    public static bool isSecondWeaponPickedup;
 
     public Rigidbody2D barrelRb;
     public Transform barrelPoint;
@@ -44,6 +44,15 @@ public class PlayerController : MonoBehaviour
     {
         character2D = GetComponent<Character2D>();
         animator = GetComponent<Animator>();
+
+        if (saveSprite != null)
+        {
+            whichImage1.gameObject.SetActive(true); 
+        }
+        else
+        {
+            whichImage1.gameObject.SetActive(false); 
+        }
         
         whichImage1.sprite = whichImage2.sprite = saveSprite;
     }

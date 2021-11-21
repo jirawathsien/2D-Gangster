@@ -1819,7 +1819,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18161492, y: -0.12709364}
+  m_Offset: {x: -0.21297207, y: -0.2148962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1830,7 +1830,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.222742, y: 0.7458127}
+  m_Size: {x: 1.9079967, y: 1.429792}
   m_EdgeRadius: 0
 --- !u!212 &159743477
 SpriteRenderer:
@@ -8214,7 +8214,6 @@ MonoBehaviour:
   poisonAttack: {fileID: 6227116865539962536, guid: 3f14376bddf7a794b8e2e50e9ed56962,
     type: 3}
   weaponTypeBox: {fileID: 883610001}
-  isSecondWeaponPickedup: 1
   barrelRb: {fileID: 0}
   barrelPoint: {fileID: 0}
   whichImage1: {fileID: 58175212}
