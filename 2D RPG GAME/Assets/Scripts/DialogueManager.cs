@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,7 +14,10 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     
     public TextMeshProUGUI dialogueDescriptionText;
-   
+
+    public Action OnDialogueFinish;
+    public bool is3rdRoomNPC;
+    
     private void Awake()
     {
         instance = this;
@@ -43,7 +47,15 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            FinishDialogue(); 
+            if (is3rdRoomNPC)
+            {
+                FinishDialogue(); 
+            }
+            else
+            {
+                FinishDialogueWithFirstNPC();
+            }
+          
             return;
         }
 
@@ -66,7 +78,13 @@ public class DialogueManager : MonoBehaviour
     {
         UIManager.instance.SetDialoguePanel();
         GameManager.instance.pauseGame = false;
-
+        OnDialogueFinish?.Invoke();
+    }
+    
+    void FinishDialogueWithFirstNPC()
+    {
+        UIManager.instance.SetDialoguePanel();
+        GameManager.instance.pauseGame = false;
       
     }
 }

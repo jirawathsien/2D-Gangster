@@ -7,6 +7,11 @@ TagManager:
   - MoveCameraTowardsNewLocation
   - Weapon
   - QuestGiver
+  - DialougTrigger
+  - BattlePoint
+  - Sword
+  - Barrel
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
@@ -16,7 +21,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Walls
   - 
   - 
   - 
