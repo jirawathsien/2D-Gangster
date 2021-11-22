@@ -226,3 +226,12 @@ MonoBehaviour:
   speed: 1.5
   health: 3
   timeToAttack: 4
+  isBoss: 0
+  lastDialogueGroup: {fileID: 0}
+  fadeScreen: {fileID: 0}
+  tobeCon: {fileID: 0}
+  rock: {fileID: 0}
+  rockThrowTime: 3.5
+  indicator: {fileID: 0}
+  healthPickup: {fileID: 1465767674878308735, guid: 2d7af2f5ddab1dd4997749aa4b7d5b8c,
+    type: 3}

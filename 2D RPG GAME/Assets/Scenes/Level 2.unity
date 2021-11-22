@@ -2548,6 +2548,7 @@ MonoBehaviour:
   rock: {fileID: 0}
   rockThrowTime: 3.5
   indicator: {fileID: 0}
+  healthPickup: {fileID: 0}
 --- !u!4 &284384718
 Transform:
   m_ObjectHideFlags: 0
@@ -8225,6 +8226,7 @@ MonoBehaviour:
   sand: {fileID: 21300000, guid: 20da4de59aa24c741894a1d838ec9d2d, type: 3}
   poison: {fileID: 21300000, guid: 4a2175eaf1521d148935f2077bb6259f, type: 3}
   skillBar: {fileID: 58175213}
+  controlScheme: {fileID: 0}
 --- !u!95 &867977340
 Animator:
   serializedVersion: 3
@@ -24995,6 +24997,8 @@ MonoBehaviour:
   rock: {fileID: 6343385518832559739, guid: 0097fba7e6f209f4eb85b588b51b270e, type: 3}
   rockThrowTime: 3.5
   indicator: {fileID: 2064136419}
+  healthPickup: {fileID: 1465767674878308735, guid: 2d7af2f5ddab1dd4997749aa4b7d5b8c,
+    type: 3}
 --- !u!61 &7265447275284600335
 BoxCollider2D:
   m_ObjectHideFlags: 0

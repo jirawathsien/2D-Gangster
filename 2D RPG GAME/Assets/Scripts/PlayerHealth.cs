@@ -32,13 +32,30 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyAttack"))
         {
-            Damage(2f);
+            Damage(0.5f);
         }
 
         if (other.gameObject.CompareTag("Rock"))
         {
             Damage(2f);
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Health"))
+        {
+            Destroy(other.gameObject);
+            if (health <= 100f)
+            {
+                health += 15f;
+                healthImage.fillAmount = (health / 100f);
+
+                if (health > 100f)
+                {
+                    health = 100f;
+                    healthImage.fillAmount = (health / 100f);
+                }
+            }
+          
         }
     }
 }

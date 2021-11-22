@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     public event Action onDead;
 
     private Vector2 playerPos;
+    public GameObject healthPickup;
     
     private void Awake()
     {
@@ -136,6 +137,22 @@ public class EnemyController : MonoBehaviour
            // rb.AddForce(forceAmount, ForceMode2D.Impulse);
             Damage(1);
         }
+
+        if (other.gameObject.CompareTag("SandAttack"))
+        {
+            Damage(1);
+            transform.DOMove(transform.position, 5f);
+        }
+        
+        if (other.gameObject.CompareTag("PoisonAttack"))
+        {
+            Damage(1);
+            speed = 0.3f;
+            transform.DOScale(1f, 5f).OnComplete(() =>
+            {
+                speed = 3f;
+            });
+        }
     }
 
 
@@ -169,7 +186,8 @@ public class EnemyController : MonoBehaviour
                     });
                 }
             }
-            
+
+            Instantiate(healthPickup, transform.position, Quaternion.identity);
             Destroy(gameObject);
         });
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private static Sprite saveSprite;
 
     public SkillBar skillBar;
+
+    public TextMeshProUGUI controlScheme;
     
     private void Start()
     {
@@ -55,6 +58,12 @@ public class PlayerController : MonoBehaviour
         }
         
         whichImage1.sprite = whichImage2.sprite = saveSprite;
+
+        if (controlScheme != null)
+        {
+            controlScheme.DOFade(0f, 5f);
+        }
+        
     }
 
     void Update()
@@ -119,6 +128,7 @@ public class PlayerController : MonoBehaviour
         if (skillBar.isAttackable && isSecondWeaponPickedup && Input.GetMouseButtonDown(1))
         {
             whichImage2.fillAmount = 0f;
+            animator.SetTrigger("Throw");
             if (isSandAttack)
             {
                 GameObject obj = Instantiate(sandAttack, transform.position, Quaternion.identity);
