@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public SkillBar skillBar;
 
     public TextMeshProUGUI controlScheme;
+
+    public Transform sixthRoomPoint;
     
     private void Start()
     {
@@ -110,6 +112,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsWalking", false);
         }
 
+
+       
+        if (Input.GetKeyDown(KeyCode.T) && sixthRoomPoint != null)
+        {
+            transform.position = sixthRoomPoint.position;
+        }
+       
+        
       
     }
     

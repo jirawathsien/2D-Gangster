@@ -21,12 +21,12 @@ public class Rock : MonoBehaviour
     private void Start()
     {
         playerPos = playerTransform.position;
-        rb.AddForce(Vector2.up * 6f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerPos, 6f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, playerPos, 15f * Time.deltaTime);
     }
  
 }
