@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D barrelRb;
     public Transform barrelPoint;
     private bool isBarrel;
-
+    private AudioSource audioSource;
+    public AudioClip attackClip;
+    
     public Image whichImage1;
     public Image whichImage2;
     public Sprite sand;
@@ -51,7 +53,8 @@ public class PlayerController : MonoBehaviour
     {
         character2D = GetComponent<Character2D>();
         animator = GetComponent<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
+        
         if (saveSprite != null)
         {
             whichImage1.gameObject.SetActive(true); 
@@ -83,6 +86,7 @@ public class PlayerController : MonoBehaviour
         
         if (!isBarrel && Input.GetMouseButtonDown(0) &&  isWeaponPicked)
         {
+            audioSource.PlayOneShot(attackClip);
             animator.SetTrigger("Attack");
         }
         else if (Input.GetMouseButtonDown(0) && isBarrel)

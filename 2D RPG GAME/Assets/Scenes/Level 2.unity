@@ -2638,6 +2638,7 @@ MonoBehaviour:
   rockThrowTime: 3.5
   indicator: {fileID: 0}
   healthPickup: {fileID: 0}
+  enemyCountText: {fileID: 0}
 --- !u!4 &284384718
 Transform:
   m_ObjectHideFlags: 0
@@ -8189,6 +8190,7 @@ GameObject:
   - component: {fileID: 867977338}
   - component: {fileID: 867977343}
   - component: {fileID: 867977344}
+  - component: {fileID: 867977345}
   m_Layer: 6
   m_Name: PlayerController
   m_TagString: Player
@@ -8310,6 +8312,7 @@ MonoBehaviour:
   weaponTypeBox: {fileID: 883610001}
   barrelRb: {fileID: 0}
   barrelPoint: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: e281b184c5956334fb54dcd614942aaf, type: 3}
   whichImage1: {fileID: 58175212}
   whichImage2: {fileID: 58175211}
   sand: {fileID: 21300000, guid: 20da4de59aa24c741894a1d838ec9d2d, type: 3}
@@ -8317,6 +8320,7 @@ MonoBehaviour:
   skillBar: {fileID: 58175213}
   controlScheme: {fileID: 0}
   sixthRoomPoint: {fileID: 1698768883}
+  lmbToAttack: {fileID: 0}
 --- !u!95 &867977340
 Animator:
   serializedVersion: 3
@@ -8444,6 +8448,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.4633776}
   m_EdgeRadius: 0
+--- !u!82 &867977345
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867977334}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e281b184c5956334fb54dcd614942aaf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &882178913
 GameObject:
   m_ObjectHideFlags: 0
@@ -25178,6 +25278,7 @@ MonoBehaviour:
   indicator: {fileID: 2064136419}
   healthPickup: {fileID: 1465767674878308735, guid: 2d7af2f5ddab1dd4997749aa4b7d5b8c,
     type: 3}
+  enemyCountText: {fileID: 0}
 --- !u!61 &7265447275284600335
 BoxCollider2D:
   m_ObjectHideFlags: 0
