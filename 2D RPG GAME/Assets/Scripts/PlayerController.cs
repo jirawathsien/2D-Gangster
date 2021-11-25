@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI controlScheme;
 
     public Transform sixthRoomPoint;
+
+    public TextMeshProUGUI lmbToAttack;
     
     private void Start()
     {
@@ -173,6 +175,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Weapon"))
         {
+            lmbToAttack.gameObject.SetActive(true);
+            lmbToAttack.DOFade(1f, 0.15f).OnComplete(() =>
+            {
+                lmbToAttack.DOFade(0f, 2f).SetDelay(1f);
+            });
             isWeaponPicked = true;
             animator.SetTrigger("Attack");
             other.gameObject.SetActive(false);
@@ -199,6 +206,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnWeaponTypePress(string weaponName)
     {
+        lmbToAttack.gameObject.SetActive(true);
+        lmbToAttack.text = "Right mouse to attack using skill";
+        lmbToAttack.DOFade(1f, 0.15f).OnComplete(() =>
+        {
+            lmbToAttack.DOFade(0f, 2f).SetDelay(1f);
+        });
+        
         whichImage1.gameObject.SetActive(true);
         isSecondWeaponPickedup = true;
         if (weaponName == "PoisonAttack")

@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,9 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 playerPos;
     public GameObject healthPickup;
+
+    public TextMeshProUGUI enemyCountText;
+    public static int enemyCount;
     
     private void Awake()
     {
@@ -158,6 +162,7 @@ public class EnemyController : MonoBehaviour
 
     void Damage(int amount)
     {
+        if (health <= 0) return;
         health -= amount;
 
         if (health <= 0)
@@ -170,6 +175,12 @@ public class EnemyController : MonoBehaviour
     void EnemyDead()
     {
         onDead?.Invoke();
+
+        if (enemyCountText != null)
+        {
+            enemyCountText.text = $"Gangster: {++enemyCount} / 3";
+        }
+        
         spriteRenderer.DOFade(0f, 0.5f).OnComplete(() =>
         {
             if (isBoss)
