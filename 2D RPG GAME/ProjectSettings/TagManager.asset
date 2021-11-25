@@ -17,6 +17,7 @@ TagManager:
   - PoisonAttack
   - SandAttack
   - Health
+  - ArrowEnable
   layers:
   - Default
   - TransparentFX

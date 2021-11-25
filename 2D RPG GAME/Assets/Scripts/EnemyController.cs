@@ -165,6 +165,11 @@ public class EnemyController : MonoBehaviour
         if (health <= 0) return;
         health -= amount;
 
+        spriteRenderer.DOColor(Color.red, 0.2f).OnComplete(() =>
+        {
+            spriteRenderer.DOColor(Color.white, 0.1f);
+        });
+
         if (health <= 0)
         {
             EnemyDead();

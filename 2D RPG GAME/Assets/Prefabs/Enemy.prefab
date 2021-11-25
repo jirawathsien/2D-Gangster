@@ -174,7 +174,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.08710718, y: 0}
@@ -188,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0942144, y: 1.32}
+  m_Size: {x: 2.91, y: 1.32}
   m_EdgeRadius: 0
 --- !u!50 &7534927389167056017
 Rigidbody2D:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b348f78744ea2d4db3f6a1946922a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 4
   health: 3
   timeToAttack: 4
   isBoss: 0
@@ -235,3 +235,4 @@ MonoBehaviour:
   indicator: {fileID: 0}
   healthPickup: {fileID: 1465767674878308735, guid: 2d7af2f5ddab1dd4997749aa4b7d5b8c,
     type: 3}
+  enemyCountText: {fileID: 0}
