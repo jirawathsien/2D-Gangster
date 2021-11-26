@@ -9416,6 +9416,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 189988260}
     m_Modifications:
+    - target: {fileID: 7909557722697479727, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1231727952}
+    - target: {fileID: 7909557722697479727, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557722813061257, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1231727952}
+    - target: {fileID: 7909557722813061257, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MuteSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1231727952}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909557723848474986, guid: 311bd398f86fd9042bcf425206769336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7909557724426086534, guid: 311bd398f86fd9042bcf425206769336,
         type: 3}
       propertyPath: m_Pivot.x
@@ -11368,6 +11428,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 247921683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1231727952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9184744984140287121, guid: d3b1093af3050c14b8f318dd0ff2cd32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1880832658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735f311f5a0bc794882bfa01cab07040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239155033
 GameObject:
   m_ObjectHideFlags: 0
